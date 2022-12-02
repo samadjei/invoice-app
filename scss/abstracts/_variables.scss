@@ -1,0 +1,69 @@
+// Colours
+$colour-1: #7c5dfa;
+$colour-2: #9277ff;
+$colour-3: #1e2139;
+$colour-4: #252945;
+$colour-5: #dfe3fa;
+$colour-6: #888eb0;
+$colour-7: #7e88c3;
+$colour-8: #0c0e16;
+$colour-9: #ec5757;
+$colour-10: #ff9797;
+$colour-11: #f8f8fb;
+$colour-12: #141625;
+$colour-13: #373B53;
+$colour-14: #FFFFFF;
+
+// Font Weight 
+$font-weight-400: 400;
+$font-weight-500: 500;
+$font-weight-700: 700;
+
+// Typography
+h1,
+h2,
+h3 {
+	font-weight: $font-weight-700;
+	color: $colour-8;
+}
+
+h1 {
+	font-size: 3.2rem;
+	line-height: 3.6rem;
+	letter-spacing: -1px;
+}
+
+h2 {
+	font-size: 2rem;
+	line-height: 2.2rem;
+	letter-spacing: -0.625px;
+}
+
+h3 {
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	letter-spacing: -0.8px;
+}
+
+.h3--small {
+	font-size: 1.2rem;
+	line-height: 1.5rem;
+	letter-spacing: -0.25px;
+	font-weight: $font-weight-700;
+}
+
+.body--medium {
+	font-weight: $font-weight-500;
+	font-size: 1.2rem;
+	line-height: 1.5rem;
+	letter-spacing: -0.25px;
+	color: $colour-8;
+}
+
+.body--medium-2 {
+	font-weight: $font-weight-500;
+	font-size: 1.1rem;
+	line-height: 1.8rem;
+	letter-spacing: -0.229167px;
+	color: $colour-8;
+}

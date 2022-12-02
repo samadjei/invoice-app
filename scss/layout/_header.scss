@@ -1,0 +1,84 @@
+@use '../abstracts' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 7.2rem;
+  margin-bottom: 6.5rem;
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__total.h3--small {
+    color: $colour-6;
+    font-weight: $font-weight-400;
+  }
+
+  &__filter {
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+  }
+  &__filter-arrow {
+    width: 1.4rem;
+    height: 1rem;
+  }
+}
+
+.filter {
+  &--checkbox {
+    background: #DFE3FA;
+    border-radius: 2px;
+  }
+}
+
+.filter__card {
+  width: 19.2rem;
+  height: 12.8rem;
+  background: $colour-14;
+  box-shadow: 0px 10px 20px rgba(72, 84, 159, 0.25);
+  padding: 2.4rem;
+  border-radius: 0.8rem;
+  position: absolute;
+  bottom: -9rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  &-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 1.6rem;
+  }
+}
+
+.filter__button-white {
+  background: $colour-14;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new__invoice-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.new__invoice-plus {
+  width: 1rem;
+  height: 1rem;
+}

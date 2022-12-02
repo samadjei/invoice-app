@@ -1,0 +1,66 @@
+@use '../abstracts' as *;
+
+
+// Base Button Styling
+.btn {
+	display: inline-block;
+	font-weight: 700;
+	border-radius: 2.8rem;
+	border: none;
+	&:hover,
+	&:focus {
+		cursor: pointer;
+	}
+}
+
+// btn placeholder
+%btn {
+	padding: 2rem 4rem;
+}
+
+// BUTTON STYLES
+
+// First Button
+.btn--primary {
+	background: $color-1;
+	color: $colour-11;
+	font-weight: 700;
+	font-size: 1.2rem;
+	line-height: 1.5rem;
+	letter-spacing: -0.25px;
+	color: $colour-14;
+	transition: all 0.3s ease-in;
+
+	&:hover {
+		background: $colour-2;
+	}
+}
+
+// Second Button
+
+.btn--secondary {
+	// &:hover,
+	// &:focus {
+
+	// }
+	// @extend %btn;
+}
+
+// Third Button
+.btn--tertiary {
+	// &:hover,
+	// &:focus {
+
+	// }
+}
+
+// Button Sizes
+
+// Desktop Button
+.btn--desktop {
+	width: 17.1rem;
+	height: 5.6rem;
+	margin: 0 auto;
+	// padding: 1.4rem 4.1rem;
+	font-size: 1.6rem;
+}
