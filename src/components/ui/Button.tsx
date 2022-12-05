@@ -2,13 +2,23 @@ import React, { forwardRef } from 'react';
 
 const STYLES = ['btn--primary', 'btn--secondary', 'btn--tertiary'];
 
-const SIZES = ['btn--desktop', 'btn--tablet', 'btn--mobile','btn--cart'];
+const SIZES = ['btn--desktop', 'btn--tablet', 'btn--mobile', 'btn--cart'];
 
-const Button = forwardRef(({ onClick, href, buttonStyle, buttonSize, type, children }, ref) => {
+interface ButtonProps {
+	onClick: () => void;
+	href: string;
+	buttonStyle: string;
+	buttonSize: string;
+	type: "button" | "reset" | "submit" | undefined;
+	children: any;
+	// ref: React.LegacyRef<HTMLButtonElement> | undefined;
+}
+
+const Button: React.FC<ButtonProps> = forwardRef(({ onClick,buttonStyle, buttonSize, type, children }) => {
 	const checkButtonStyle = STYLES.includes(buttonStyle) ? buttonStyle : STYLES[0];
 	const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
 	return (
-		<button className={`btn ${checkButtonStyle} ${checkButtonSize}`} href={href} type={type} onClick={onClick} ref={ref}>
+		<button className={`btn ${checkButtonStyle} ${checkButtonSize}`}  type={type} onClick={onClick}>
 			{children}
 		</button>
 	);

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Header from '../src/components/Header'
 import SideBar from '../src/components/SideBar'
 import type { NextPage } from 'next';
+import Form from '../src/components/form/Form';
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
           <div className="main__flex">
             <Header />
           </div>
+          <Form />
         </div>
 			</main>
     </div>

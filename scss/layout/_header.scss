@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  height: 19.6rem;
   margin-top: 7.2rem;
   margin-bottom: 6.5rem;
   &__right {
@@ -22,18 +23,30 @@
   &__filter {
     display: flex;
     gap: 1.6rem;
-    align-items: center;
     cursor: pointer;
+  }
+
+  &__filters {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
     position: relative;
     z-index: 1;
   }
   &__filter-arrow {
     width: 1.4rem;
     height: 1rem;
+    transition: all 0.5s ease;
   }
 }
 
 .filter {
+  &__text {
+    display: flex;
+    gap: 1.3rem;
+    cursor: pointer;
+  }
+
   &--checkbox {
     background: #DFE3FA;
     border-radius: 2px;
@@ -48,9 +61,9 @@
   padding: 2.4rem;
   border-radius: 0.8rem;
   position: absolute;
-  bottom: -9rem;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 6rem;
+  left: 0;
+  transform: translateX(-15%);
   z-index: 10;
   &-container {
     display: flex;
@@ -81,4 +94,80 @@
 .new__invoice-plus {
   width: 1rem;
   height: 1rem;
+}
+
+.filter__card-content {
+  display: block;
+  position: relative;
+  padding-left: 3rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.25px;
+  color: #1E2139;
+}
+
+/* Hide the browser's default checkbox */
+.filter__card-content input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.6rem;
+  width: 1.6rem;
+  background-color: $colour-5;
+  border: 0.2rem solid #7c5dfa;
+  border-radius: 0.2rem;
+}
+
+/* On mouse-over, add a grey background color */
+.filter__card-content:hover input ~ .checkmark {
+  background-color: $colour-5;
+}
+
+.filter__card-content input:checked ~ .checkmark {
+  background-color: $colour-1;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.filter__card-content input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.filter__card-content .checkmark:after {
+  left: 4.5px;
+  top: 0.5px;
+  width: 5px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 0.2rem 0.2rem 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.rotate {
+  transform: rotate(180deg);
+  transition: all 0.5s ease;
 }
