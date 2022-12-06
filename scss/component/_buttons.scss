@@ -36,6 +36,22 @@
 	}
 }
 
+.btn--item {
+	background: $colour-16;
+	border-radius: 2.4rem;
+	transition: all 0.4s ease-in;
+	color: $colour-7;
+	&:hover, 
+	&:focus {
+		background: $colour-5;
+	}
+}
+
+.btn--item-long {
+	width: 50.4rem;
+	height: 4.8rem;
+}
+
 // Second Button
 
 .btn--secondary {

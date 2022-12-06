@@ -13,6 +13,8 @@ $colour-11: #f8f8fb;
 $colour-12: #141625;
 $colour-13: #373B53;
 $colour-14: #FFFFFF;
+$colour-15: #777F98;
+$colour-16: #F9FAFE;
 
 // Font Weight 
 $font-weight-400: 400;
@@ -66,4 +68,9 @@ h3 {
 	line-height: 1.8rem;
 	letter-spacing: -0.229167px;
 	color: $colour-8;
+}
+
+// Flex 
+.flex {
+  display: flex;
 }

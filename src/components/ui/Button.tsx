@@ -1,8 +1,8 @@
 import React, { forwardRef } from 'react';
 
-const STYLES = ['btn--primary', 'btn--secondary', 'btn--tertiary'];
+const STYLES = ['btn--primary', 'btn--secondary', 'btn--tertiary', 'btn--item'];
 
-const SIZES = ['btn--desktop', 'btn--tablet', 'btn--mobile', 'btn--cart'];
+const SIZES = ['btn--desktop', 'btn--tablet', 'btn--mobile', 'btn--item-long'];
 
 interface ButtonProps {
 	onClick: () => void;
@@ -11,7 +11,6 @@ interface ButtonProps {
 	buttonSize: string;
 	type: "button" | "reset" | "submit" | undefined;
 	children: any;
-	// ref: React.LegacyRef<HTMLButtonElement> | undefined;
 }
 
 const Button: React.FC<ButtonProps> = forwardRef(({ onClick,buttonStyle, buttonSize, type, children }) => {
