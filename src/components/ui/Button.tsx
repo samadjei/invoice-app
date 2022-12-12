@@ -1,8 +1,7 @@
 import React, { forwardRef } from 'react';
 
-const STYLES = ['btn--primary', 'btn--secondary', 'btn--tertiary', 'btn--item'];
-
-const SIZES = ['btn--desktop', 'btn--tablet', 'btn--mobile', 'btn--item-long'];
+const STYLES = ['btn--primary', 'btn--secondary', 'btn--tertiary', 'btn--item', 'btn--delete', 'btn--grey', 'btn--draft'];
+const SIZES = ['btn--desktop', 'btn--tablet', 'btn--mobile', 'btn--item-long', 'btn--discard', 'btn--mini'];
 
 interface ButtonProps {
 	onClick: () => void;

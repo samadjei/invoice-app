@@ -1,8 +1,21 @@
 @use '../abstracts' as *;
 
-
-
 .form {
+  position: absolute;
+  border-radius: 0px 20px 20px 0px;
+  width: 72rem;
+  background: $colour-14;
+  left: 8rem;
+  height: 100vh;
+  padding: 5.6rem;
+  padding-left: 8.6rem;
+  padding-right: 3.2rem;
+  z-index: 9;
+  &__scroll {
+    margin-bottom: 5.6rem;
+    overflow-y: auto;
+    height: calc(80vh - 5.6rem);
+  }
   &--title {
     font-size: 2.4rem;
     line-height: 3.2rem;
@@ -38,14 +51,51 @@
     margin-bottom: 2.4rem;
     gap: 2.4rem;
   }
+
+  &__discard-right {
+    margin-right: auto;
+  }
+
+  &__bottom-buttons {
+    margin-top: 3.9rem;
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+    z-index: 8;
+  }
+}
+
+.display--none {
+  display: none;
 }
 
 .input {
-
+  font-weight: $font-weight-700;
+  color: $colour-8;
+  width: 100%;
   &::placeholder {
     color: $colour-8;
     opacity: 0.4;
     font-weight: $font-weight-700;
+  }
+
+  &--border-error {
+    border: 1px solid $colour-8;
+  }
+
+  &--large-width {
+    width: 50.4rem;
+  }
+
+  &__label {
+    display: flex;
+    justify-content: space-between;
   }
 
   &__text-field {
@@ -84,6 +134,33 @@
     height: 4.8rem;
   }
 
+  &--item {
+    width: 21.4rem;
+    height: 4.8rem;
+  }
+
+  &--qty {
+    width: 4.6rem;
+    height: 4.8rem;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  &--price {
+    width: 10rem;
+    height: 4.8rem;
+  }
+
+  &__total-spot {
+    align-items: center;
+    margin-top: 3rem;
+    gap: 3.803rem;
+  }
+
+  &--total {
+    display: block;
+  }
+
   &__payment-terms {
     display: flex;
     flex-direction: column;
@@ -101,17 +178,13 @@
 .item__list {
   margin-top: 3.2rem;
 
+  &-subheaders {
+    margin-bottom: 1.6rem;
+    gap: 1.6rem;
+  }
+
   .body--medium {
     color: $colour-7;
-    &:first-child {
-      padding-right: 15.4rem;
-    }
-    &:nth-child(2){
-      padding-right: 1.6rem;
-    }
-    &:nth-child(3){
-      padding-right: 6rem;
-    }
   }
 }
 
@@ -124,6 +197,24 @@
   margin-bottom: 1.5rem;
 }
 
-.item--list-subheaders {
-  margin-bottom: 1.6rem;
+.total--delete {
+  width: 1.244rem;
+  height: 1.6rem;
+  cursor: pointer;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.error {
+  color: $colour-9;
 }

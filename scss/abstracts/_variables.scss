@@ -15,6 +15,8 @@ $colour-13: #373B53;
 $colour-14: #FFFFFF;
 $colour-15: #777F98;
 $colour-16: #F9FAFE;
+$colour-17: #33D69F;
+$colour-18: #FF8F00;
 
 // Font Weight 
 $font-weight-400: 400;
@@ -70,7 +72,55 @@ h3 {
 	color: $colour-8;
 }
 
+// .text-
+
 // Flex 
 .flex {
   display: flex;
+}
+
+// Light theme 
+.light {
+	background: $colour-11;
+	height: 100vh;
+	transition: all 0.4s ease;
+	.text--one {
+		color: $colour-8;
+		transition: all 0.4s ease;
+	}
+	.text--two {
+		color: $colour-6;
+		transition: all 0.4s ease;
+	}
+	.background {
+		background: $colour-14;
+		transition: all 0.4s ease;
+	}
+	.background--two {
+		background: $colour-14;
+		transition: all 0.4s ease;
+	}
+}
+
+// Dark theme 
+.dark {
+	transition: all 0.4s ease;
+	background: $colour-12;
+	height: 100vh;
+	.text--one {
+		color: $colour-14;
+		transition: all 0.4s ease;
+	}
+	.text--two {
+		color: $colour-5;
+		transition: all 0.4s ease;
+	}
+	.background {
+		background: $colour-12;
+		transition: all 0.4s ease;
+	}
+	.background--two {
+		background: $colour-3;
+		transition: all 0.4s ease;
+	}	
 }

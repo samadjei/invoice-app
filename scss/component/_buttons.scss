@@ -47,8 +47,39 @@
 	}
 }
 
+.btn--delete {
+	width: 8.9rem;
+	height: 4.8rem;
+	background: $colour-9;
+	color: $colour-14;
+	&:hover,
+	&:focus {
+		background: $colour-10;
+	}
+} 
+
+.btn--draft {
+	color: $colour-6;
+	background: $colour-13;
+}
+
+.btn--grey {
+	background: $colour-16;
+	color: $colour-7;
+}
+
+.btn--discard {
+	width: 9.6rem;
+	height: 4.8rem;
+}
+
 .btn--item-long {
 	width: 50.4rem;
+	height: 4.8rem;
+}
+
+.btn--mini{
+	width: 13.3rem;
 	height: 4.8rem;
 }
 

@@ -6,6 +6,7 @@
 
 @use 'component/buttons' as *;
 @use 'component/form' as *;
+@use 'component/invoices' as *;
 
 @use 'layout/sidebar' as *;
 @use 'layout/header' as *;
@@ -33,6 +34,7 @@ html {
 body {
 	font-family: 'League Spartan', sans-serif;
 	font-size: 1.6rem;
+	line-height: 1.5rem;
 }
 
 a {
@@ -65,3 +67,4 @@ img {
 	display: flex;
 	justify-content: center;
 }
+

@@ -10,21 +10,22 @@ interface TextFieldProps {
   formStyle: string,
   formSize: string,
   className: string,
-  placeholder: string
+  placeholder: string,
+  onChange: () => void;
+  onBlur: () => void;
 }
 
 const STYLES = ['input--primary'];
-const SIZES = ['input--large','input--medium','input--small' ];
+const SIZES = ['input--large','input--medium','input--small', 'input--item', 'input--qty', 'input--price' ];
 
-const TextField: React.FC<TextFieldProps> = ({
+const TextField: React.FC<TextFieldProps> = React.forwardRef<HTMLInputElement, TextFieldProps>(({
   htmlFor,
   label,
   type,
   name,
-  value,
   placeholder,
   formStyle,
-  formSize }) => {
+  formSize, onChange, onBlur }, ref) => {
 
   // if the component has a form style, then i we want it to be whatever the button style we created and if it's not true, we set the value to the first style value in the array 
   const checkFormStyle = STYLES.includes(formStyle) ? formStyle : STYLES[0];
@@ -34,9 +35,12 @@ const TextField: React.FC<TextFieldProps> = ({
   return (
     <div className='input__text-field'>
       <label className='body--medium input--label-text' htmlFor={htmlFor}>{label}</label>
-      <input className={`input input--padding ${checkFormStyle} ${checkFormSize}`} type={type} name={name} value={value} placeholder={placeholder} />
+      <input className={`input input--padding ${checkFormStyle} ${checkFormSize}`} onChange={onChange} onBlur={onBlur} ref={ref} type={type} name={name} placeholder={placeholder} />
     </div>
   )
-}
+});
+
+TextField.displayName = 'TextField';
+
 
 export default TextField

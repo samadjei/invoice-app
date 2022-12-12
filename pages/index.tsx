@@ -1,10 +1,36 @@
+import React, { useState } from 'react'
 import Head from 'next/head'
 import Header from '../src/components/Header'
 import SideBar from '../src/components/SideBar'
 import type { NextPage } from 'next';
 import Form from '../src/components/form/Form';
+import Invoices from '../src/components/invoices/Invoices';
 
-const Home: NextPage = () => {
+interface HomeProps {
+  toggleTheme: () => void;
+  invoiceOpen: boolean;
+}
+
+const Home: NextPage<HomeProps> = () => {
+  const [theme, setTheme] = useState('light');
+  const [invoiceOpen, setInvoiceOpen] = useState(false);
+  const [sideBarIcon, setSideBarIcon] = useState(false)
+  
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+    setSideBarIcon(!sideBarIcon)
+  }
+  
+  const openFilter = () => { 
+    setInvoiceOpen(!invoiceOpen)
+  }
+
+  const discardForm = (e: any) => { 
+    e.preventDefault();
+    setInvoiceOpen(invoiceOpen)
+    console.log("clicked");
+  }
+
   return (
     <div>
       <Head>
@@ -13,13 +39,20 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-			<main>
-        <SideBar />
+			<main className={theme}>
+        <SideBar sideBarIcon={sideBarIcon} theme={theme} toggleTheme={toggleTheme} />
+        {invoiceOpen ? <div className='form__overlay'></div> : null}
+        {invoiceOpen
+          ? 
+          <Form discardForm={discardForm} invoiceOpen={invoiceOpen} />
+          :
+          null
+        }
         <div className="container">
           <div className="main__flex">
-            <Header />
+            <Header invoiceOpen={invoiceOpen} setInvoiceOpen={setInvoiceOpen} openFilter={openFilter} />
           </div>
-          <Form />
+          <Invoices/>
         </div>
 			</main>
     </div>
