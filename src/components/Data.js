@@ -1,6 +1,7 @@
-[
+export const invoice = [
   {
     "id": "RT3080",
+    "slug": "rt3080",
     "createdAt": "2021-08-18",
     "paymentDue": "2021-08-19",
     "description": "Re-branding",
@@ -9,7 +10,8 @@
     "clientEmail": "jensenh@mail.com",
     "status": "paid",
     "senderAddress": {
-      "street": "19 Union Terrace",
+      "street"
+      : "19 Union Terrace",
       "city": "London",
       "postCode": "E1 3EZ",
       "country": "United Kingdom"
@@ -32,6 +34,7 @@
   },
   {
     "id": "XM9141",
+    "slug": "xm9141",
     "createdAt": "2021-08-21",
     "paymentDue": "2021-09-20",
     "description": "Graphic Design",
@@ -69,6 +72,7 @@
   },
   {
     "id": "RG0314",
+    "slug": "rg0314",
     "createdAt": "2021-09-24",
     "paymentDue": "2021-10-01",
     "description": "Website Redesign",
@@ -100,6 +104,7 @@
   },
   {
     "id": "RT2080",
+    "slug": "rt2080",
     "createdAt": "2021-10-11",
     "paymentDue": "2021-10-12",
     "description": "Logo Concept",
@@ -131,6 +136,7 @@
   },
   {
     "id": "AA1449",
+    "slug": "aa1449",
     "createdAt": "2021-10-7",
     "paymentDue": "2021-10-14",
     "description": "Re-branding",
@@ -168,6 +174,7 @@
   },
   {
     "id": "TY9141",
+    "slug": "ty9141",
     "createdAt": "2021-10-01",
     "paymentDue": "2021-10-31",
     "description": "Landing Page Design",
@@ -199,6 +206,7 @@
   },
   {
     "id": "FV2353",
+    "slug": "fv 2353",
     "createdAt": "2021-11-05",
     "paymentDue": "2021-11-12",
     "description": "Logo Re-design",
