@@ -1,4 +1,4 @@
-// @use 'abstracts/breakpoints';
+@use 'abstracts' as *;
 @use 'abstracts/mixins' as *;
 @use 'abstracts/colours' as *;
 
@@ -12,6 +12,7 @@
 @use 'layout/header' as *;
 
 @use 'pages/homepage' as *;
+@use 'pages/invoiceDetails' as *;
 
 // @import 'component/button.scss';
 
@@ -35,6 +36,7 @@ body {
 	font-family: 'League Spartan', sans-serif;
 	font-size: 1.6rem;
 	line-height: 1.5rem;
+	background: $colour-11;
 }
 
 a {

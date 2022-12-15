@@ -50,10 +50,10 @@ const Header: React.FC<HeaderProps> = ({openFilter}) => {
             </div> : null }
             <Button onClick={openFilter}>
               <div className="new__invoice-btn">
-              <div className='filter__button-white'>
-                <Image className='new__invoice-plus' src={Plus} alt="Plus Icon" />
-              </div>
-              New Invoice
+                <div className='filter__button-white'>
+                  <Image className='new__invoice-plus' src={Plus} alt="Plus Icon" />
+                </div>
+                New Invoice
               </div>
             </Button>
             </div>

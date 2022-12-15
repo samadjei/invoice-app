@@ -1,0 +1,39 @@
+@use '../abstracts' as *;
+
+.invoiceDetails {
+  padding-top: 6.4rem;
+
+  &__upper {
+    box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+    border-radius: 8px;
+    height: 8.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3.2rem;
+    padding: 2.4rem 3.2rem;
+  }
+  &--back-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &--back-text {
+    margin-left: 2.366rem;
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    &--text {
+      font-weight: $font-weight-500;
+      color: $colour-19;
+    }
+  }
+
+  &__buttons-flex {
+    display: flex;
+    gap: 0.8rem;
+  }
+}

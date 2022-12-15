@@ -69,6 +69,10 @@
     background-color: rgba(0,0,0,.5);
     z-index: 8;
   }
+
+  &__draft {
+    margin-right: 0.8rem;
+  }
 }
 
 .display--none {
@@ -79,11 +83,7 @@
   font-weight: $font-weight-700;
   color: $colour-8;
   width: 100%;
-  &::placeholder {
-    color: $colour-8;
-    opacity: 0.4;
-    font-weight: $font-weight-700;
-  }
+  
 
   &--border-error {
     border: 1px solid $colour-8;
@@ -171,7 +171,6 @@
 .select {
   width: 24rem;
   border-radius: 0.4rem;
-  border: 1px solid $colour-5;
   padding-left: 2rem;
 }
 

@@ -35,7 +35,7 @@ const TextField: React.FC<TextFieldProps> = React.forwardRef<HTMLInputElement, T
   return (
     <div className='input__text-field'>
       <label className='body--medium input--label-text' htmlFor={htmlFor}>{label}</label>
-      <input className={`input input--padding ${checkFormStyle} ${checkFormSize}`} onChange={onChange} onBlur={onBlur} ref={ref} type={type} name={name} placeholder={placeholder} />
+      <input className={`input background--two input--padding ${checkFormStyle} ${checkFormSize}`} onChange={onChange} onBlur={onBlur} ref={ref} type={type} name={name} placeholder={placeholder} />
     </div>
   )
 });

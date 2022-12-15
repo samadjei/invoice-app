@@ -10,8 +10,7 @@ export const invoice = [
     "clientEmail": "jensenh@mail.com",
     "status": "paid",
     "senderAddress": {
-      "street"
-      : "19 Union Terrace",
+      "street": "19 Union Terrace",
       "city": "London",
       "postCode": "E1 3EZ",
       "country": "United Kingdom"

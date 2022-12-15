@@ -1,6 +1,4 @@
-// import Navbar from './navbar';
 import Head from 'next/head';
-
 const Layout = ({ children }) => {
 	return (
 		<>

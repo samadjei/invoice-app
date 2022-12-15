@@ -4,7 +4,10 @@
 // Base Button Styling
 .btn {
 	display: inline-block;
-	font-weight: 700;
+	font-size: 1.2rem;
+	line-height: 1.5rem;
+	letter-spacing: -0.25px;
+	font-weight: $font-weight-700;
 	border-radius: 2.8rem;
 	border: none;
 	&:hover,
@@ -19,24 +22,58 @@
 }
 
 // BUTTON STYLES
-
-// First Button
-.btn--primary {
+.btn--style-one {
 	background: $color-1;
-	color: $colour-11;
-	font-weight: 700;
-	font-size: 1.2rem;
-	line-height: 1.5rem;
-	letter-spacing: -0.25px;
 	color: $colour-14;
-	transition: all 0.3s ease-in;
-
+	transition: all 0.4s ease-in;
 	&:hover {
 		background: $colour-2;
 	}
 }
 
-.btn--item {
+.light {
+	.btn--style-two {
+		background: $colour-16;
+		color: $colour-7;
+		transition: all 0.4s ease-in;
+		&:hover {
+			background: $colour-5;
+			color: $colour-7;
+		}
+	}
+
+	.btn--style-three {
+		background: $colour-13;
+		color: $colour-6;
+		transition: all 0.4s ease-in;
+		&:hover {
+			background: $colour-8;
+		}
+	}
+}
+
+.dark {
+	.btn--style-two {
+		background: $colour-16;
+		color: $colour-7;
+		transition: all 0.4s ease-in;
+		&:hover {
+			background: $colour-14;
+			color: $colour-5;
+		}
+	}
+
+	.btn--style-three {
+		background: $colour-13;
+		color: $colour-5;
+		transition: all 0.4s ease-in;
+		&:hover {
+			background: $colour-3;
+		}
+	}
+}
+
+.btn--style-four {
 	background: $colour-16;
 	border-radius: 2.4rem;
 	transition: all 0.4s ease-in;
@@ -47,7 +84,7 @@
 	}
 }
 
-.btn--delete {
+.btn--style-five {
 	width: 8.9rem;
 	height: 4.8rem;
 	background: $colour-9;
@@ -63,51 +100,35 @@
 	background: $colour-13;
 }
 
-.btn--grey {
+.btn--style-six {
 	background: $colour-16;
 	color: $colour-7;
 }
 
-.btn--discard {
-	width: 9.6rem;
-	height: 4.8rem;
+// Button Sizes
+.btn--size-one {
+	width: 17.1rem;
+	height: 5.6rem;
+	margin: 0 auto;
+	font-size: 1.6rem;
 }
 
-.btn--item-long {
-	width: 50.4rem;
-	height: 4.8rem;
-}
-
-.btn--mini{
+.btn--size-two {
 	width: 13.3rem;
 	height: 4.8rem;
 }
 
-// Second Button
-
-.btn--secondary {
-	// &:hover,
-	// &:focus {
-
-	// }
-	// @extend %btn;
+.btn--size-three {
+	width: 7.3rem;
+	height: 4.8rem;
 }
 
-// Third Button
-.btn--tertiary {
-	// &:hover,
-	// &:focus {
-
-	// }
+.btn--size-four {
+	width: 8.9rem;
+	height: 4.8rem;
 }
 
-// Button Sizes
+.btn--size-five {
+	width: 52rem;
+	height: 4.8rem;}
 
-// Desktop Button
-.btn--desktop {
-	width: 17.1rem;
-	height: 5.6rem;
-	margin: 0 auto;
-	// padding: 1.4rem 4.1rem;
-	font-size: 1.6rem;
-}

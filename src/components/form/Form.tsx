@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Delete from "../../../public/assets/icon-delete.svg"
 import { useForm } from "react-hook-form";
 import { nanoid } from 'nanoid'
-import Invoices from '../invoices/Invoices';
+import { data } from '../invoices/Invoices';
 
 const Form = ({discardForm}) => {
   const { register, handleSubmit, formState: { errors } } = useForm({
@@ -99,7 +99,7 @@ const Form = ({discardForm}) => {
               required: "Required"
             })}
             name='cityOne'
-                        onChange={handleAddFormChange}
+            onChange={handleAddFormChange}
 
             />
             <TextField
@@ -116,7 +116,7 @@ const Form = ({discardForm}) => {
                 required: "Required"
                 })}
               name='countryOne'
-                          onChange={handleAddFormChange}
+              onChange={handleAddFormChange}
 
             />
           </div>
@@ -129,15 +129,15 @@ const Form = ({discardForm}) => {
                 required: "Required"
               })}
               name='clientsName'
-                          onChange={handleAddFormChange}
- />
+                onChange={handleAddFormChange}
+            />
             <TextField htmlFor="clients-email" placeholder='e.g. email@example.com' label="Client's Email"
               {...register('clientsEmail', {
                 required: "Required"
               })}
               name='clientsEmail'
-                          onChange={handleAddFormChange}
- />
+              onChange={handleAddFormChange}
+            />
             <TextField htmlFor="street-address" label="Street Address"
               {...register('streetAddressTwo', {
                 required: "Required"
@@ -176,7 +176,7 @@ const Form = ({discardForm}) => {
             />
           <div className='input__payment-terms'>
             <label className='body--medium input--label-text' htmlFor="payment-terms">Payment Terms</label>
-            <select className='select input--medium' name="paymentTerms"
+            <select className='select select__background input--medium' name="paymentTerms"
                         onChange={handleAddFormChange}
  id="payment-terms">
               <option value="Net 1 Day">Net 1 Day</option>
@@ -235,7 +235,7 @@ const Form = ({discardForm}) => {
                 </div>
               </div>
           </div>
-          <Button buttonStyle='btn--item' buttonSize='btn--item-long'>
+          <Button buttonStyle='btn--style-four' buttonSize='btn--size-five'>
           + Add New Item
           </Button> 
           </div>
@@ -243,10 +243,12 @@ const Form = ({discardForm}) => {
       </div>
       <div className='form__bottom-buttons flex'>
         <div className="form__discard-right">
-          <Button onClick={discardForm} buttonStyle='btn--grey' buttonSize='btn--discard'>Discard</Button>
+          <Button onClick={discardForm} buttonStyle='btn--style-six' buttonSize='btn--size-four'>Discard</Button>
         </div>
-        <Button buttonStyle='btn--draft' buttonSize='btn--mini'>Save as Draft</Button>
-        <Button type='submit' buttonSize='btn--mini'>Save & Send</Button>
+        <div className="form__draft">
+          <Button  buttonStyle='btn--style-three' buttonSize='btn--size-two'>Save as Draft</Button>
+        </div>
+        <Button type='submit' buttonStyle='' buttonSize='btn--size-two'>Save & Send</Button>
       </div>
     </form>
   )

@@ -5,31 +5,27 @@ import SideBar from '../src/components/SideBar'
 import type { NextPage } from 'next';
 import Form from '../src/components/form/Form';
 import Invoices from '../src/components/invoices/Invoices';
-
+import { useStateContext } from '../src/hooks/context/StateContext';
 interface HomeProps {
   toggleTheme: () => void;
   invoiceOpen: boolean;
 }
 
 const Home: NextPage<HomeProps> = () => {
-  const [theme, setTheme] = useState('light');
+  
   const [invoiceOpen, setInvoiceOpen] = useState(false);
-  const [sideBarIcon, setSideBarIcon] = useState(false)
   
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-    setSideBarIcon(!sideBarIcon)
-  }
-  
-  const openFilter = () => { 
+  const openFilter = () => {
     setInvoiceOpen(!invoiceOpen)
   }
 
-  const discardForm = (e: any) => { 
+  const discardForm = (e: any) => {
     e.preventDefault();
     setInvoiceOpen(invoiceOpen)
     console.log("clicked");
   }
+
+  const { theme, toggleTheme, sideBarIcon } = useStateContext();
 
   return (
     <div>

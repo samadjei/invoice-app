@@ -17,6 +17,7 @@ $colour-15: #777F98;
 $colour-16: #F9FAFE;
 $colour-17: #33D69F;
 $colour-18: #FF8F00;
+$colour-19: #858BB2;
 
 // Font Weight 
 $font-weight-400: 400;
@@ -72,7 +73,6 @@ h3 {
 	color: $colour-8;
 }
 
-// .text-
 
 // Flex 
 .flex {
@@ -100,6 +100,24 @@ h3 {
 		background: $colour-14;
 		transition: all 0.4s ease;
 	}
+	.input--primary {
+    border: 1px solid $colour-5;
+    border-radius: 4px;
+  }
+	.input{
+		color: $colour-8;
+		&::placeholder {
+			color: $colour-8;
+			opacity: 0.4;
+			font-weight: $font-weight-700;
+		}
+	}
+
+	.select__background {
+		border: 1px solid $colour-5;
+		background: $colour-14;
+		color: $colour-8;
+	}
 }
 
 // Dark theme 
@@ -123,4 +141,27 @@ h3 {
 		background: $colour-3;
 		transition: all 0.4s ease;
 	}	
+
+	.input--primary {
+    border: 1px solid $colour-4;
+    border-radius: 4px;
+		transition: all 0.4s ease;
+  }
+
+	.input{
+		color: $colour-14;
+		transition: all 0.4s ease;
+		&::placeholder {
+			color: $colour-14;
+			opacity: 0.4;
+			font-weight: $font-weight-700;
+		}
+	}
+
+	.select__background {
+		border: 1px solid $colour-4;
+		background: $colour-3;
+		color: $colour-14;
+		transition: all 0.4s ease;
+	}
 }
