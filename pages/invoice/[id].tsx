@@ -50,49 +50,52 @@ const InvoiceDetails = ({ items }) => {
 							<Button buttonSize='btn--size-two'>Mark as Paid</Button>
 						</div>
 					</div>
-					<div>
-						<div>
-							<span>#{items.id}</span>
-							<span>{items.description}</span>
-							<div>
+					{/* Bottom */}
+					<div className="invoiceDetails__bottom">
+						<div className='invoiceDetails__bottom-header'>
+							<div className='invoiceDetails__id'>
+								<span className='form--title text--one'><span className='text--two'>#</span>{items.id}</span>
+								<span className='body--medium'>{items.description}</span>
+							</div>
+							<div className='invoiceDetails__address'>
 								{Object.entries(items.senderAddress).map((sender, index) => (
 									<span key={index}>{sender[1]}</span>
 								))}
 							</div>
 						</div>
-					</div>
-					<div>
 						<div>
-							<span>Invoice Date</span>
-							<span>{items.createdAt}</span>
-						</div>
-						<div>
-							<span>Payment Due</span>
-							<span>{items.paymentDue}</span>
-						</div>
-					</div>
-					<div>
-						<span>Bill To</span>
-						<span>{items.clientName}</span>
-						<div>
-							{Object.entries(items.clientAddress).map((sender, index) => (
-								<span key={index}>{sender[1]}</span>
-							))}
+							<div>
+								<span>Invoice Date</span>
+								<span>{items.createdAt}</span>
 							</div>
-					</div>
-					<div>
-						<span>Sent to</span>
-						<span>{items.clientEmail}</span>
-					</div>
-					<div>
-						<div>
-							<span>Item Name</span>
-							<span>QTY.</span>
-							<span>Price</span>
-							<span>Total</span>
+							<div>
+								<span>Payment Due</span>
+								<span>{items.paymentDue}</span>
+							</div>
 						</div>
-						<div></div>
-						<div></div>
+						<div>
+							<span>Bill To</span>
+							<span>{items.clientName}</span>
+							<div>
+								{Object.entries(items.clientAddress).map((sender, index) => (
+									<span key={index}>{sender[1]}</span>
+								))}
+								</div>
+						</div>
+						<div>
+							<span>Sent to</span>
+							<span>{items.clientEmail}</span>
+						</div>
+						<div>
+							<div>
+								<span>Item Name</span>
+								<span>QTY.</span>
+								<span>Price</span>
+								<span>Total</span>
+							</div>
+							<div></div>
+							<div></div>
+						</div>
 					</div>
 				</div>
 			</div>
