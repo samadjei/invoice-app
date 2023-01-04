@@ -16,30 +16,38 @@ const Form = ({ discardForm }) => {
 
 	const [invoices, setInvocies] = useState(invoice);
 
-	const total = 0;
+	// const total = 0;
 
 	console.log('State', invoices);
 
 	const date = new Intl.DateTimeFormat('fr-CA', { year: 'numeric', month: '2-digit', day: '2-digit' }).format(Date.now());
 
-	const [addFormData, setAdFormData] = useState({
-		streetAddressOne: '',
-		cityOne: '',
-		postCodeOne: '',
-		countryOne: '',
+	const [addFormData, setAddFormData] = useState({
+		senderAddress: {
+			streetOne: '',
+			cityOne: '',
+			postCodeOne: '',
+			countryOne: '',
+		},
 		clientsName: '',
 		clientsEmail: '',
-		streetAddressTwo: '',
-		cityTwo: '',
-		postCodeTwo: '',
-		countryTwo: '',
+		clientAddress: {
+			streetTwo: '',
+			cityTwo: '',
+			postCodeTwo: '',
+			countryTwo: '',
+		},
 		paymentDue: '',
 		paymentTerms: '',
 		description: '',
-		name: '',
-		qty: '',
-		price: '',
+		items: [{
+			name: '',
+			quantity: '',
+			price: '',
+		}]
 	});
+
+console.log("Default",addFormData);
 
 	const handleAddFormChange = (e) => {
 		e.preventDefault();
@@ -52,8 +60,13 @@ const Form = ({ discardForm }) => {
 		// update the object with the new data the user has typed
 		newFormData[fieldName] = fieldValue;
 
-		setAdFormData(newFormData);
+		setAddFormData(newFormData);
 	};
+
+	const addItemList = () => { 
+		// grabs the existing items 
+		setAddFormData([...addFormData,{ name: '',quantity: '',price: ''}])
+	}
 
 	const onSubmit = (data) => {
 		console.log(data);
@@ -69,13 +82,13 @@ const Form = ({ discardForm }) => {
 			clientsEmail: addFormData.clientsEmail,
 			status: 'pending',
 			senderAddress: {
-				streetAddressOne: addFormData.streetAddressOne,
+				streetOne: addFormData.streetOne,
 				cityOne: addFormData.cityOne,
 				postCodeOne: addFormData.postCodeOne,
 				countryOne: addFormData.countryOne,
 			},
 			clientAddress: {
-				streetAddressTwo: addFormData.streetAddressTwo,
+				streetTwo: addFormData.streetTwo,
 				cityTwo: addFormData.cityTwo,
 				postCodeTwo: addFormData.postCodeTwo,
 				countryTwo: addFormData.countryTwo,
@@ -83,7 +96,7 @@ const Form = ({ discardForm }) => {
 			items: [
 				{
 					name: addFormData.name,
-					qty: addFormData.qty,
+					quantity: addFormData.quantity,
 					price: addFormData.price,
 				},
 			],
@@ -105,13 +118,13 @@ const Form = ({ discardForm }) => {
 						className="display--none"
 						htmlFor="street-address"
 						label="Street Address"
-						{...register('streetAddressOne', {
+						{...register('streetOne', {
 							required: 'Street Address is required',
 						})}
-						name="streetAddressOne"
+						name="streetOne"
 						onChange={handleAddFormChange}
 					/>
-					{/* {errors.streetAddressOne && <span className="error">{errors.streetAddressOne.message}</span>} */}
+					{/* {errors.streetOne && <span className="error">{errors.streetOne.message}</span>} */}
 					<div className="flex form__flex-gap">
 						<TextField
 							formSize="input--small"
@@ -170,10 +183,10 @@ const Form = ({ discardForm }) => {
 						<TextField
 							htmlFor="street-address"
 							label="Street Address"
-							{...register('streetAddressTwo', {
+							{...register('streetTwo', {
 								required: 'Required',
 							})}
-							name="streetAddressTwo"
+							name="streetTwo"
 						/>
 						<div className="flex form__flex-gap">
 							<TextField
@@ -217,10 +230,10 @@ const Form = ({ discardForm }) => {
 								Payment Terms
 							</label>
 							<select className="select select__background input--medium" name="paymentTerms" onChange={handleAddFormChange} id="payment-terms">
-								<option value="Net 1 Day">Net 1 Day</option>
-								<option value="Net 7 Day">Net 7 Day</option>
-								<option value="Net 14 Days">Net 14 Days</option>
-								<option value="Net 30 Days">Net 30 Days</option>
+								<option value="1">Net 1 Day</option>
+								<option value="7">Net 7 Day</option>
+								<option value="14">Net 14 Days</option>
+								<option value="30">Net 30 Days</option>
 							</select>
 						</div>
 					</div>
@@ -231,7 +244,7 @@ const Form = ({ discardForm }) => {
 					<div className="flex form__flex-column">
 						<div className="flex item__list-subheaders">
 							<div>
-								<span className="body--medium ">Item Name</span>
+								<span className="body--medium">Item Name</span>
 								<TextField
 									formSize="input--item"
 									{...register('itemName', {
@@ -246,10 +259,10 @@ const Form = ({ discardForm }) => {
 								<TextField
 									type="number"
 									formSize="input--qty"
-									{...register('qty', {
-										required: 'qty',
+									{...register('quantity', {
+										required: 'quantity',
 									})}
-									name="qty"
+									name="quantity"
 									onChange={handleAddFormChange}
 								/>
 							</div>
@@ -273,7 +286,55 @@ const Form = ({ discardForm }) => {
 								</div>
 							</div>
 						</div>
-						<Button buttonStyle="btn--style-four" buttonSize="btn--size-five">
+						{/* <table className='input__item-list'>
+								<tr>
+									<th className="body--medium">Item Name</th>
+									<th className="body--medium">QTY.</th>
+									<th className="body--medium">Price</th>
+									<th className="body--medium">Total</th>
+							</tr>
+							<tr>
+								<td className='input__item-fields'>
+								<TextField
+									formSize="input--item"
+									{...register('itemName', {
+										required: 'itemName',
+									})}
+									name="name"
+									onChange={handleAddFormChange}
+								/>
+								</td>
+								<td>
+								<TextField
+									type="number"
+									formSize="input--quantity"
+									{...register('quantity', {
+										required: 'quantity',
+									})}
+									name="quantity"
+									onChange={handleAddFormChange}
+								/>
+								</td>
+								<td>
+								<TextField
+									type="number"
+									formSize="input--price"
+									{...register('price', {
+										required: 'price',
+									})}
+									name="price"
+									onChange={handleAddFormChange}
+								/>
+								</td>
+								<td>
+								<div className="flex input__total-spot">
+									<span className="input--total body--medium">156.00</span>
+									<Image className="total--delete" src={Delete} alt="Delete Icon" />
+								</div>
+								</td>
+								</tr>
+							</table> */}
+						<Button onClick={()=> addItemList()} buttonStyle="btn--style-four" buttonSize="btn--size-five">
 							+ Add New Item
 						</Button>
 					</div>

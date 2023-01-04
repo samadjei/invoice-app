@@ -97,8 +97,8 @@ const InvoiceDetails = ({ items }) => {
 						<div className="inoviceDetails__items">
 							<table className="invoiceDetails__table">
 								<tr>
-									<th className="body--medium-2 invoiceDetails--purple">Items Name</th>
-									<th className="body--medium-2 invoiceDetails--purple">QTY.</th>
+									<th className="body--medium-2 invoiceDetails--purple">Item Name</th>
+									<th className="body--medium-2 invoiceDetails--purple">Qty.</th>
 									<th className="body--medium-2 invoiceDetails--purple">Price</th>
 									<th className="body--medium-2 invoiceDetails--purple">Total</th>
 								</tr>
