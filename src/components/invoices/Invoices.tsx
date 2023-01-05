@@ -28,9 +28,9 @@ const Invoices = () => {
 							<span className="invoices--hashtag">#</span>
 							{item.id}
 						</strong>
-						<span className="text--two">Due {item.paymentDue}</span>
-						<span className="text--two">{item.clientName}</span>
-						<h3 className="text--one">£{item.total}</h3>
+						<span className="text--two h3--small">Due {item.paymentDue}</span>
+						<span className="text--two h3--small">{item.clientName}</span>
+						<h3 className="text--one">£ {item.total.toLocaleString()}</h3>
 						<div className="invoices__flex">
 							<div className="invoices__status invoices--paid">
 								<span className="invoices--dot invoices--dot-paid"></span>
